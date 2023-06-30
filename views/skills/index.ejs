@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Skills</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-    <h1>Student Skillz</h1>
-    <ul>
-      <% skills.forEach(function(s) { %>
-        <li>
-            <a href="/skills/<%= s.id %>"><%= s.name %></a>
-            has 
-          <%= s.learned ? 'been learned' : 'NOT been learned' %>
-        </li>
-      <% }); %>
-    </ul>
-  </body>
-</html>
+<%- include('../partials/header') %>
+
+
+<ul>
+ 
+  <% skills.forEach(function(s) { %>
+    <li>
+     
+      <a href="/skills/<%= s.id %>"><%= s.name %></a>
+      has 
+      <%= s.learned ? 'been learned' : 'NOT been learned' %>
+    </li>
+    <% }); %>
+</ul>
+<a href="/skills/new">Add skill</a>
+  
+<%- include('../partials/footer') %>
